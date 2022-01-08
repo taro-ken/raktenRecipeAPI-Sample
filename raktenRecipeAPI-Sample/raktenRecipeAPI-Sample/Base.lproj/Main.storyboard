@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XN3-93-uc4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Items View Controller-->
+        <scene sceneID="r9c-SV-SUT">
+            <objects>
+                <viewController id="XN3-93-uc4" customClass="ItemsViewController" customModule="raktenRecipeAPI_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5nZ-RK-ETX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WeL-61-h86">
+                                <rect key="frame" x="0.0" y="44" width="414" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oVe-dd-mxC">
+                                <rect key="frame" x="40" y="796" width="334" height="32"/>
+                                <segments>
+                                    <segment title="全カテゴリ"/>
+                                    <segment title="ダイエット"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeCategory:" destination="XN3-93-uc4" eventType="valueChanged" id="h6s-JN-YDd"/>
+                                </connections>
+                            </segmentedControl>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="9VO-XI-CGg">
+                                <rect key="frame" x="20" y="426" width="374" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5QC-4s-iVU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oVe-dd-mxC" firstAttribute="leading" secondItem="5QC-4s-iVU" secondAttribute="leading" constant="40" id="1NO-9w-arZ"/>
+                            <constraint firstItem="oVe-dd-mxC" firstAttribute="top" secondItem="WeL-61-h86" secondAttribute="bottom" constant="34" id="6Hm-Yt-gQw"/>
+                            <constraint firstItem="WeL-61-h86" firstAttribute="top" secondItem="5QC-4s-iVU" secondAttribute="top" id="ATY-Ul-sVA"/>
+                            <constraint firstItem="5QC-4s-iVU" firstAttribute="bottom" secondItem="WeL-61-h86" secondAttribute="bottom" constant="100" id="DDN-2w-OVo"/>
+                            <constraint firstItem="5QC-4s-iVU" firstAttribute="trailing" secondItem="WeL-61-h86" secondAttribute="trailing" id="nWK-bN-Sla"/>
+                            <constraint firstItem="5QC-4s-iVU" firstAttribute="trailing" secondItem="oVe-dd-mxC" secondAttribute="trailing" constant="40" id="p5g-Ms-3uN"/>
+                            <constraint firstItem="WeL-61-h86" firstAttribute="leading" secondItem="5QC-4s-iVU" secondAttribute="leading" id="xcO-Qh-KYN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="indicator" destination="9VO-XI-CGg" id="pef-rH-qf6"/>
+                        <outlet property="tableView" destination="WeL-61-h86" id="Nzu-Rz-gC6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qgw-lY-fqH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221.73913043478262" y="92.410714285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
